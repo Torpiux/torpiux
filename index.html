@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Content Creation Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0e7e9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: ##ffffff;
+             /* Add the following line to enable CSS transitions */
+    transition: background-color 1s ease-in-out;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #f2d2e4;
+            padding: 40px 60px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #7e6ea9;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            display: inline-block;
+            background-color: #a3d3f7;
+            color: #4b4b4b;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #8cc3f3;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="title-box">
+        <h1>Welcome to My Personal Content Creation Page!</h1>
+        <p>Explore my latest blogs, videos, artwork, and more.</p>
+        <a href="content.html">Check Out My Content</a>
+    </div>
+    <script>
+    const bodyColors = ['#f2d2e4', '#f0e7e9', '#a3d3f7', '#d7f2d2', '#f2d7d5'];
+    const containerColors = ['#a3d3f7', '#d7f2d2', '#f2d2e4', '#f2d7d5', '#7e6ea9'];
+    const textColors = ['#4b4b4b', '#4b4b4b', '#4b4b4b', '#4b4b4b', '#ffffff'];
+    let currentColorIndex = 0;
+    let interval;
+
+    function changeBackgroundColor() {
+        currentColorIndex = (currentColorIndex + 1) % bodyColors.length;
+        const titleBox = document.getElementById('title-box');
+        document.body.style.backgroundColor = bodyColors[currentColorIndex];
+        titleBox.style.backgroundColor = containerColors[currentColorIndex];
+        titleBox.style.color = textColors[currentColorIndex];
+    }
+
+    function startColorTransition() {
+        changeBackgroundColor();
+        interval = setInterval(changeBackgroundColor, 5000);
+    }
+
+    document.addEventListener('DOMContentLoaded', startColorTransition);
+</script>
+
+
+
+
+
+</body>
+</html>
